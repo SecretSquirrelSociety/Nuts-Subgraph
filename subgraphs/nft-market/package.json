@@ -1,0 +1,14 @@
+{
+  "name": "nft-market",
+  "description": "NUTS NFT Market Subgraph",
+  "version": "1.0.0",
+  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
+  "author": "PancakeSwap",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen": "graph codegen subgraph.yaml",
+    "build": "graph build subgraph.yaml",
+    "deploy": "graph deploy --node http://localhost:8020 --ipfs http://localhost:5001 pancakeswap/nft-market subgraph.yaml",
+    "createdeploy": "graph create --node http://localhost:8020 pancakeswap/nft-market subgraph.yaml"
+  }
+}
