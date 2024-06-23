@@ -8,6 +8,7 @@
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
     "build": "graph build subgraph.yaml",
-    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ pancakeswap/profile subgraph.yaml"
+    "deploy": "graph deploy --node http://localhost:8020 --ipfs http://localhost:5001 pancakeswap/profile subgraph.yaml",
+    "createdeploy": "graph create --node http://localhost:8020 pancakeswap/profile subgraph.yaml"
   }
 }

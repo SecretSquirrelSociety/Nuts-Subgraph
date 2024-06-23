@@ -8,9 +8,9 @@ dataSources:
     name: ERC721NFTMarketV1
     network: mainnet
     source:
-      address: "0xa93Dc29dA99d1C1D9c74F96f47851A9dCcF26554"
+      address: "0xd543EE2B2A4678FfBF61291420B6B79ff37e163b"
       abi: ERC721NFTMarketV1
-      startBlock: 20606328
+      startBlock: 20694330
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

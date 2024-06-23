@@ -26,7 +26,7 @@ export function fetchSymbol(): string {
 
 export function fetchTokenUri(tokenID: BigInt): string | null {
   let contract = ERC721.bind(dataSource.address());
-
+  console.log("fetchTokenUri: ", tokenID.toString());
   let uriResult = contract.try_tokenURI(tokenID);
   if (!uriResult.reverted) {
     return uriResult.value;

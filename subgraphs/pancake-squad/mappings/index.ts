@@ -6,7 +6,7 @@ import { toBigDecimal } from "./utils";
 import { fetchName, fetchSymbol, fetchTokenUri } from "./utils/erc-721";
 
 // Constants
-let CONTRACT_ADDRESS = "0x0a8901b0e25deb55a87524f0cc164e9644020eba";
+let CONTRACT_ADDRESS = "0xdA73418AB0DeCd86A03a8e70D9d0219F0c83bfe0";
 let ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 // BigNumber-like references
@@ -72,14 +72,14 @@ export function handleTransfer(event: Transfer): void {
   to.updatedAt = event.block.timestamp;
   to.save();
 
-  let token = Token.load(event.params.tokenId.toString());
+  let token = Token.load(event.params.id.toString());
   if (token === null) {
     // Token
-    token = new Token(event.params.tokenId.toString());
+    token = new Token(event.params.id.toString());
     token.minter = to.id;
     token.owner = to.id;
     token.burned = false;
-    token.uri = fetchTokenUri(event.params.tokenId);
+    token.uri = fetchTokenUri(event.params.id);
     token.totalTransactions = ZERO_BI;
     token.block = event.block.number;
     token.createdAt = event.block.timestamp;

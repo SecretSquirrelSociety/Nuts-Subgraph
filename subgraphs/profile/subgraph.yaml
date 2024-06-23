@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Profile
-    network: bsc
+    network: mainnet
     source:
-      address: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a'
+      address: "0x8171f62dCA16545a6e2bde3b629E45C57faD4527"
       abi: Profile
-      startBlock: 4570433
+      startBlock: 20694330
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
