@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
 import { Address, BigInt } from "@graphprotocol/graph-ts";
 import { Contract, Owner, Token, Transaction } from "../generated/schema";
-import { Transfer } from "../generated/ERC721/ERC721";
+import { Transfer } from "../generated/ERC404/ERC404";
 import { toBigDecimal } from "./utils";
 import { fetchName, fetchSymbol, fetchTokenUri } from "./utils/erc-721";
 

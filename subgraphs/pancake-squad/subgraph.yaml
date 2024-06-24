@@ -5,11 +5,11 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: ERC721
+    name: ERC404
     network: mainnet
     source:
       address: "0xdA73418AB0DeCd86A03a8e70D9d0219F0c83bfe0"
-      abi: ERC721
+      abi: ERC404
       startBlock: 19663240
     mapping:
       kind: ethereum/events
@@ -22,8 +22,8 @@ dataSources:
         - Token
         - Transaction
       abis:
-        - name: ERC721
-          file: ./abis/ERC721.json
+        - name: ERC404
+          file: ./abis/ERC404.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
