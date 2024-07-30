@@ -6,7 +6,7 @@ import { toBigDecimal } from "./utils";
 import { fetchName, fetchSymbol, fetchTokenUri } from "./utils/erc-721";
 
 // Constants
-let CONTRACT_ADDRESS = "0xdA73418AB0DeCd86A03a8e70D9d0219F0c83bfe0";
+let CONTRACT_ADDRESS = "0x97f7259931f98CC64EbCd993fdE03d71716f3E07";
 let ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 // BigNumber-like references
