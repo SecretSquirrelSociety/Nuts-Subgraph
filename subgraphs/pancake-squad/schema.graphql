@@ -16,7 +16,7 @@ type _Schema_
   )
 
 """
-Pancake Squad (contract)
+Nuts (contract)
 """
 type Contract @entity {
   "ID (address)"
