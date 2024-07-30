@@ -2,8 +2,8 @@
   "name": "exchange-v3-lite",
   "description": "PancakeSwap Subgraph for Exchange V3 lite version",
   "version": "1.0.0",
-  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
-  "author": "PancakeSwap",
+  "repository": "git@github.com:SecretSquirrelSociety/Nuts-Subgraph.git",
+  "author": "SecretSquirrelSociety",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "template": "mustache ../../../config/$NETWORK.js subgraph.template.yaml > subgraph.yaml && mustache ../../../config/$NETWORK.js utils/constants.template.ts > utils/constants.ts && mustache ../../../config/$NETWORK.js utils/pricing.template.ts > utils/pricing.ts",

@@ -1,6 +1,6 @@
 specVersion: 0.0.3
 description: MasterChefV2
-repository: https://github.com/pancakeswap/pancakeswapswap-subgraph
+repository: https://github.com/SecretSquirrelSociety/pancakeswapswap-subgraph
 schema:
   file: ./schema.graphql
 dataSources:

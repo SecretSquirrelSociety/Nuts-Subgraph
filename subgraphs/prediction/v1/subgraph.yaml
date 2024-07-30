@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Pancake Prediction
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: Prediction
     network: bsc
     source:
-      address: '0x516ffd7D1e0Ca40b1879935B2De87cb20Fc1124b'
+      address: "0x516ffd7D1e0Ca40b1879935B2De87cb20Fc1124b"
       abi: Prediction
       startBlock: 6950840
     mapping:

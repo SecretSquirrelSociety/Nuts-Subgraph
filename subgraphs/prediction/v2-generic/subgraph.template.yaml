@@ -1,16 +1,16 @@
 specVersion: 0.0.2
 description: Pancake Prediction V2
-repository: https://github.com/pancakeswap/pancakeswapswap-subgraph
+repository: https://github.com/SecretSquirrelSociety/pancakeswapswap-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: PredictionV2
-    network: {{ network }}
+    network: { { network } }
     source:
       address: "{{ predictionV2.address}}"
       abi: PredictionV2
-      startBlock: {{ predictionV2.startBlock }}
+      startBlock: { { predictionV2.startBlock } }
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

@@ -1,6 +1,6 @@
 specVersion: 0.0.3
 description: Pancake Farm Issue v3
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: MasterChefV3
     network: bsc
     source:
-      address: '0x556B9306565093C855AEA9AE92A594704c2Cd59e'
+      address: "0x556B9306565093C855AEA9AE92A594704c2Cd59e"
       abi: MasterChefV3
       startBlock: 26933904
     mapping:

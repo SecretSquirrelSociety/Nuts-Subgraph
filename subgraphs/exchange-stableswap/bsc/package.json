@@ -2,8 +2,8 @@
   "name": "exchange-stableswap",
   "description": "PancakeSwap Subgraph",
   "version": "1.0.0",
-  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
-  "author": "PancakeSwap",
+  "repository": "git@github.com:SecretSquirrelSociety/Nuts-Subgraph.git",
+  "author": "SecretSquirrelSociety",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "auth": "graph auth --product hosted-service SUBGRAPH_KEY",

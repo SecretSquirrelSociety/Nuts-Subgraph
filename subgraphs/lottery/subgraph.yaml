@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: PancakeSwap Lottery
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: Lottery
     network: bsc
     source:
-      address: '0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c'
+      address: "0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c"
       abi: Lottery
       startBlock: 8796011
     mapping:

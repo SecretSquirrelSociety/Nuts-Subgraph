@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Gauges voting system
-repository: https://github.com/pancakeswap/pancake-subgraph
+repository: https://github.com/SecretSquirrelSociety/pancake-subgraph
 schema:
   file: ./schema.graphql
 features:
@@ -10,7 +10,7 @@ dataSources:
     name: GaugeVoting
     network: bsc
     source:
-      address: '0xD6f7C34e2FfBE1b8bFD40f5960aE269C596fF893'
+      address: "0xD6f7C34e2FfBE1b8bFD40f5960aE269C596fF893"
       abi: GaugeVoting
       startBlock: 33687498
     mapping:

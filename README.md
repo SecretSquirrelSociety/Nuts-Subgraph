@@ -114,4 +114,4 @@ For any of the subgraph: `blocks` as `[subgraph]`
 
 ## v1
 
-To access subgraphs related to PancakeSwap v1 ecosystem ([article](https://pancakeswap.medium.com/the-great-migration-vote-4093cb3edf23)), use [`v1`](https://github.com/pancakeswap/pancake-subgraph/tree/v1) branch.
+To access subgraphs related to PancakeSwap v1 ecosystem ([article](https://pancakeswap.medium.com/the-great-migration-vote-4093cb3edf23)), use [`v1`](https://github.com/SecretSquirrelSociety/pancake-subgraph/tree/v1) branch.

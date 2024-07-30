@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: PancakeSwap is a multi-chain decentralized exchange and automated market maker protocol.
-repository: https://github.com/pancakeswap/pancake-subgraph
+repository: https://github.com/SecretSquirrelSociety/pancake-subgraph
 schema:
   file: ./schema.graphql
 features:
@@ -8,11 +8,11 @@ features:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: {{ network }}
+    network: { { network } }
     source:
       address: "{{v3.factoryAddress}}"
       abi: Factory
-      startBlock: {{ v3.startBlock }}
+      startBlock: { { v3.startBlock } }
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -37,11 +37,11 @@ dataSources:
           handler: handlePoolCreated
   - kind: ethereum/contract
     name: NonfungiblePositionManager
-    network: {{network}}
+    network: { { network } }
     source:
       address: "{{v3.nonfungiblePositionManagerAddress}}"
       abi: NonfungiblePositionManager
-      startBlock: {{ v3.nonfungiblePositionManagerStartBlock }}
+      startBlock: { { v3.nonfungiblePositionManagerStartBlock } }
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -69,7 +69,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: {{ network }}
+    network: { { network } }
     source:
       abi: Pool
     mapping:

@@ -1,14 +1,14 @@
 {
-  "name": "pancake-squad",
-  "description": "PancakeSwap Subgraph",
+  "name": "nutscollection",
+  "description": "nuts collection Subgraph",
   "version": "1.0.0",
-  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
-  "author": "PancakeSwap",
+  "repository": "git@github.com:SecretSquirrelSociety/Nuts-Subgraph.git",
+  "author": "SecretSquirrelSociety",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
     "build": "graph build subgraph.yaml",
-    "deploy": "graph deploy --node http://localhost:8020 --ipfs http://localhost:5001 pancakeswap/pancake-squad subgraph.yaml",
-    "createdeploy": "graph create --node http://localhost:8020 pancakeswap/pancake-squad subgraph.yaml"
+    "deploy": "graph deploy --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io --ipfs https://ipfsformarketplace--6402ujg.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io SecretSquirrelSociety/collection subgraph.yaml",
+    "createdeploy": "graph create --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io SecretSquirrelSociety/nutscollection subgraph.yaml"
   }
 }

@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Pancake Farm Auction
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: FarmAuction
     network: bsc
     source:
-      address: '0xb92Ab7c1edcb273AbA24b0656cEb3681654805D2'
+      address: "0xb92Ab7c1edcb273AbA24b0656cEb3681654805D2"
       abi: FarmAuction
       startBlock: 9678443
     mapping:

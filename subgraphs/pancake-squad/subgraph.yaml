@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Pancake Squad NFT Collection
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: ERC404
     network: mainnet
     source:
-      address: "0xdA73418AB0DeCd86A03a8e70D9d0219F0c83bfe0"
+      address: "0x97f7259931f98CC64EbCd993fdE03d71716f3E07"
       abi: ERC404
       startBlock: 19663240
     mapping:

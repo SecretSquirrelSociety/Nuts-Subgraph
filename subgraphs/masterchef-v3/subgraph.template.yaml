@@ -1,16 +1,16 @@
 specVersion: 0.0.3
 description: MasterChefV3
-repository: https://github.com/pancakeswap/pancakeswapswap-subgraph
+repository: https://github.com/SecretSquirrelSociety/pancakeswapswap-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: MasterChefV3
-    network: {{ network }}
+    network: { { network } }
     source:
       address: "{{ masterChefV3.masterChefAddress}}"
       abi: MasterChefV3
-      startBlock: {{ masterChefV3.startBlock }}
+      startBlock: { { masterChefV3.startBlock } }
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

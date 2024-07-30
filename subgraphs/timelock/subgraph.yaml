@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: PancakeSwap Timelock
-repository: https://github.com/pancakeswap
+repository: https://github.com/SecretSquirrelSociety
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: Timelock
     network: bsc
     source:
-      address: '0xA1f482Dc58145Ba2210bC21878Ca34000E2e8fE4'
+      address: "0xA1f482Dc58145Ba2210bC21878Ca34000E2e8fE4"
       abi: Timelock
       startBlock: 704262
     mapping:
