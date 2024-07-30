@@ -36,7 +36,7 @@ export function handleCollectionNew(event: CollectionNew): void {
     collection.symbol = fetchSymbol(event.params.collection);
     collection.active = true;
     collection.totalTrades = ZERO_BI;
-    collection.totalVolumeBNB = ZERO_BD;
+    collection.totalVolumePLS = ZERO_BD;
     collection.numberTokensListed = ZERO_BI;
     collection.creatorAddress = event.params.creator;
     collection.tradingFee = toBigDecimal(event.params.tradingFee, 2);
@@ -82,11 +82,11 @@ export function handleAskNew(event: AskNew): void {
     user.numberTokensListed = ONE_BI;
     user.numberTokensPurchased = ZERO_BI;
     user.numberTokensSold = ZERO_BI;
-    user.totalVolumeInBNBTokensPurchased = ZERO_BD;
-    user.totalVolumeInBNBTokensSold = ZERO_BD;
-    user.totalFeesCollectedInBNB = ZERO_BD;
-    user.averageTokenPriceInBNBPurchased = ZERO_BD;
-    user.averageTokenPriceInBNBSold = ZERO_BD;
+    user.totalVolumeInPLSTokensPurchased = ZERO_BD;
+    user.totalVolumeInPLSTokensSold = ZERO_BD;
+    user.totalFeesCollectedInPLS = ZERO_BD;
+    user.averageTokenPriceInPLSPurchased = ZERO_BD;
+    user.averageTokenPriceInPLSSold = ZERO_BD;
     user.save();
   }
   user.numberTokensListed = user.numberTokensListed.plus(ONE_BI);
@@ -108,8 +108,8 @@ export function handleAskNew(event: AskNew): void {
     token.updatedAt = event.block.timestamp;
     token.currentAskPrice = toBigDecimal(event.params.askPrice, 18);
     token.currentSeller = event.params.seller.toHex();
-    token.latestTradedPriceInBNB = ZERO_BD;
-    token.tradeVolumeBNB = ZERO_BD;
+    token.latestTradedPriceInPLS = ZERO_BD;
+    token.tradeVolumePLS = ZERO_BD;
     token.totalTrades = ZERO_BI;
     token.isTradable = true;
     token.save();
@@ -199,18 +199,18 @@ export function handleTrade(event: Trade): void {
     buyer.numberTokensListed = ZERO_BI;
     buyer.numberTokensPurchased = ONE_BI; // 1 token purchased
     buyer.numberTokensSold = ZERO_BI;
-    buyer.totalVolumeInBNBTokensPurchased = toBigDecimal(event.params.askPrice, 18);
-    buyer.totalVolumeInBNBTokensSold = ZERO_BD;
-    buyer.totalFeesCollectedInBNB = ZERO_BD;
-    buyer.averageTokenPriceInBNBPurchased = buyer.totalVolumeInBNBTokensPurchased;
-    buyer.averageTokenPriceInBNBSold = ZERO_BD;
+    buyer.totalVolumeInPLSTokensPurchased = toBigDecimal(event.params.askPrice, 18);
+    buyer.totalVolumeInPLSTokensSold = ZERO_BD;
+    buyer.totalFeesCollectedInPLS = ZERO_BD;
+    buyer.averageTokenPriceInPLSPurchased = buyer.totalVolumeInPLSTokensPurchased;
+    buyer.averageTokenPriceInPLSSold = ZERO_BD;
   } else {
     buyer.numberTokensPurchased = buyer.numberTokensPurchased.plus(ONE_BI);
-    buyer.totalVolumeInBNBTokensPurchased = buyer.totalVolumeInBNBTokensPurchased.plus(
+    buyer.totalVolumeInPLSTokensPurchased = buyer.totalVolumeInPLSTokensPurchased.plus(
       toBigDecimal(event.params.askPrice, 18)
     );
 
-    buyer.averageTokenPriceInBNBPurchased = buyer.totalVolumeInBNBTokensPurchased.div(
+    buyer.averageTokenPriceInPLSPurchased = buyer.totalVolumeInPLSTokensPurchased.div(
       buyer.numberTokensPurchased.toBigDecimal()
     );
   }
@@ -220,14 +220,14 @@ export function handleTrade(event: Trade): void {
 
   seller.numberTokensSold = seller.numberTokensSold.plus(ONE_BI);
   seller.numberTokensListed = seller.numberTokensListed.minus(ONE_BI);
-  seller.totalVolumeInBNBTokensSold = seller.totalVolumeInBNBTokensSold.plus(toBigDecimal(event.params.netPrice, 18));
-  seller.averageTokenPriceInBNBSold = seller.totalVolumeInBNBTokensSold.div(seller.numberTokensSold.toBigDecimal());
+  seller.totalVolumeInPLSTokensSold = seller.totalVolumeInPLSTokensSold.plus(toBigDecimal(event.params.netPrice, 18));
+  seller.averageTokenPriceInPLSSold = seller.totalVolumeInPLSTokensSold.div(seller.numberTokensSold.toBigDecimal());
 
   // 3. Collection
   let collection = Collection.load(event.params.collection.toHex());
   if (collection !== null) {
     collection.totalTrades = collection.totalTrades.plus(ONE_BI);
-    collection.totalVolumeBNB = collection.totalVolumeBNB.plus(toBigDecimal(event.params.askPrice, 18));
+    collection.totalVolumePLS = collection.totalVolumePLS.plus(toBigDecimal(event.params.askPrice, 18));
     collection.numberTokensListed = collection.numberTokensListed.minus(ONE_BI);
     collection.save();
   }
@@ -236,8 +236,8 @@ export function handleTrade(event: Trade): void {
   let tokenConcatId = event.params.collection.toHex() + "-" + event.params.tokenId.toString();
   let token = NFT.load(tokenConcatId);
 
-  token.latestTradedPriceInBNB = toBigDecimal(event.params.askPrice, 18);
-  token.tradeVolumeBNB = token.tradeVolumeBNB.plus(token.latestTradedPriceInBNB);
+  token.latestTradedPriceInPLS = toBigDecimal(event.params.askPrice, 18);
+  token.tradeVolumePLS = token.tradeVolumePLS.plus(token.latestTradedPriceInPLS);
   token.updatedAt = event.block.timestamp;
   token.totalTrades = token.totalTrades.plus(ONE_BI);
   token.currentAskPrice = ZERO_BD;
@@ -257,7 +257,7 @@ export function handleTrade(event: Trade): void {
   transaction.buyer = event.params.buyer.toHex();
   transaction.seller = event.params.seller.toHex();
 
-  transaction.withBNB = event.params.withBNB;
+  transaction.withPLS = event.params.withPLS;
 
   transaction.save();
   buyer.save();
@@ -279,13 +279,13 @@ export function handleRevenueClaim(event: RevenueClaim): void {
     user.numberTokensListed = ZERO_BI;
     user.numberTokensPurchased = ZERO_BI;
     user.numberTokensSold = ZERO_BI;
-    user.totalVolumeInBNBTokensPurchased = ZERO_BD;
-    user.totalVolumeInBNBTokensSold = ZERO_BD;
-    user.totalFeesCollectedInBNB = ZERO_BD;
-    user.averageTokenPriceInBNBPurchased = ZERO_BD;
-    user.averageTokenPriceInBNBSold = ZERO_BD;
+    user.totalVolumeInPLSTokensPurchased = ZERO_BD;
+    user.totalVolumeInPLSTokensSold = ZERO_BD;
+    user.totalFeesCollectedInPLS = ZERO_BD;
+    user.averageTokenPriceInPLSPurchased = ZERO_BD;
+    user.averageTokenPriceInPLSSold = ZERO_BD;
     user.save();
   }
-  user.totalFeesCollectedInBNB = user.totalFeesCollectedInBNB.plus(toBigDecimal(event.params.amount, 18));
+  user.totalFeesCollectedInPLS = user.totalFeesCollectedInPLS.plus(toBigDecimal(event.params.amount, 18));
   user.save();
 }
