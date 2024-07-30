@@ -8,9 +8,9 @@ dataSources:
     name: ERC721NFTMarketV1
     network: mainnet
     source:
-      address: "0xa32098A697E477f536Cf356C1372Ee6371b5f0E0"
+      address: "0x362a085104581faD04e58a1379012e4996d1880B"
       abi: ERC721NFTMarketV1
-      startBlock: 20694330
+      startBlock: 21021770
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -27,8 +27,8 @@ dataSources:
           file: ./abis/ERC721NFTMarketV1.json
         - name: IERC721
           file: ./abis/IERC721.json
-        - name: PancakeBunnies
-          file: ./abis/PancakeBunnies.json
+        - name: Nuts
+          file: ./abis/Nuts.json
       eventHandlers:
         - event: AskCancel(indexed address,indexed address,indexed uint256)
           handler: handleAskCancel

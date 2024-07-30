@@ -8,7 +8,7 @@
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
     "build": "graph build subgraph.yaml",
-    "deploy": "graph deploy --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io --ipfs https://ipfsformarketplace--6402ujg.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io SecretSquirrelSociety/collection subgraph.yaml",
-    "createdeploy": "graph create --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io SecretSquirrelSociety/nutscollection subgraph.yaml"
+    "deploy": "graph deploy --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io --ipfs https://ipfsformarketplace--6402ujg.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io secretsquirrelsociety/nutscollection subgraph.yaml",
+    "createdeploy": "graph create --node https://pulsesubgraph--zjd7etb.salmoncliff-e94028bf.canadaeast.azurecontainerapps.io secretsquirrelsociety/nutscollection subgraph.yaml"
   }
 }
